@@ -8,7 +8,7 @@ var path            = require('path');
 var app             = express();
 
 app.get("/ping", function(req, res) {
-    res.status(200).end("Ping");
+    res.status(200).end("Pong");
 });
 
 app.listen(port, function () {
