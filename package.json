@@ -1,0 +1,14 @@
+{
+  "name": "voucherify-showcase",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "4.2.6"
+  },
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {}
+}
