@@ -11,6 +11,8 @@ app.get("/ping", function(req, res) {
     res.status(200).end("Pong");
 });
 
+app.use(require("./routes/order"));
+
 app.listen(port, function () {
   console.log('Example app listening on port %s!', port);
 });
