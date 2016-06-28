@@ -86,8 +86,8 @@ router.post("/order/charge", function(request, response) {
     //-- Get order from CRM --
     var order = repository.orders[order_id];
     var customer = repository.customers[order.customer];
-    var payment = repository.payments.pop() || {};
-    var voucher_code = payment.voucher_code || order.voucher_code
+    var payment = repository.payments[repository.payments.length - 1] || {};
+    var voucher_code = payment.voucher_code || order.voucher_code;
 
     //-- If voucher code then redeem and charge discounted value --
     if (voucher_code) {
@@ -126,6 +126,7 @@ router.post("/order/charge", function(request, response) {
                                 quantity: 1 
                             },
                             metadata: {
+                                customer: customer.voucherify_customer_id,
                                 order_id: order_id,
                                 origin_duration_period_count: voucher_metadata.origin_duration_period_count || voucher_metadata.duration_period_count,
                                 duration_period_count: duration_period_count,
