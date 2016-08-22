@@ -33,7 +33,14 @@ In this showcase we will present how to integrate voucherify into platform which
 
 `src\server.js`
 
+### Recurrent Voucher model
 
+```
+{
+    "recurring": true,
+    "duration_period_count": 3
+}
+```
 
 ### Changelog
 

@@ -26,7 +26,7 @@ var repository = {
             total                   : 30
         },
         "2": {
-            voucher_code            : "GIFT100",
+            voucher_code            : "BB_TEST",
             voucherify_tracking_id  : "track_vHnsXB2hK3Tw+Vj+VlOARh8Hw7qtMzlr",
             customer_name           : "Test IT VoucherifyCustomer",
             customer_email          : "it@voucherify.io",
@@ -132,6 +132,9 @@ router.post("/order/charge", function(request, response) {
                                 duration_period_count: duration_period_count,
                                 recurring: true,
                                 parent_voucher: voucher.metadata.parent_voucher || voucher.code
+                            },
+                            code_config: {
+                                pattern: "RECURRENT-######"
                             }
                         });
                     }
